@@ -1,20 +1,18 @@
-# I have created this file - Amit 
+# This file is created by Amit 
 from django.http import HttpResponse
 from django.shortcuts import render
-
-
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib import messages
 
 
 def signup(request):
-    return HttpResponse('This is my signup page.')
-    # return render(request, 'wisewools/signup.html')
+    form = UserCreationForm()
+    return render(request, 'wisewools/signup.html',{"form": form})
 
 
 def login(request):
-    return HttpResponse('This is my login page.')
-    # return render(request, login, context)
-
-
+    # return HttpResponse('This is my login page.')
+    return render(request, 'wisewools/login.html')
 
 def home(request):
     # return HttpResponse("This is my Home page")

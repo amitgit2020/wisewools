@@ -38,10 +38,10 @@
 
         <form class="form-inline my-2 my-lg-0">
           <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+          {% comment %} <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button> {% endcomment %}
         </form>
-        <button class="btn btn-outline-light my-2 my-sm-0" type="submit" href= '{% url "signup" %}'style = "margin-left: 5px; margin-right = 5 px">signup</button>
-        <button class="btn btn-outline-light my-2 my-sm-0" type="submit" href= '{% url "login" %}'style = "margin-left: 5px; margin-right = 5 px">login</button>
+        <a href="{% url 'signup' %}" class="btn btn-outline-light" role="button" aria-pressed="true" style = "margin-left: 5px; margin-right = 5 px">Signup</a>
+         <a href="{% url 'login' %}" class="btn btn-outline-light" role="button" aria-pressed="true" style = "margin-left: 5px; margin-right = 5 px">Login</a>
     </nav>
     {% block content %}
     {% endblock content %}
