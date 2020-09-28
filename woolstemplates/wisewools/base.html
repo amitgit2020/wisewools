@@ -43,6 +43,14 @@
         <a href="{% url 'signup' %}" class="btn btn-outline-light" role="button" aria-pressed="true" style = "margin-left: 5px; margin-right = 5 px">Signup</a>
          <a href="{% url 'login' %}" class="btn btn-outline-light" role="button" aria-pressed="true" style = "margin-left: 5px; margin-right = 5 px">Login</a>
     </nav>
+    {% if messages %}
+      {% for message in messages %}
+        <div class="alert alert-{{message.tags}}">
+          {{message}}
+        </div>
+      {% endfor %}
+    {% endif %}
+    
     {% block content %}
     {% endblock content %}
 

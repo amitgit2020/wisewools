@@ -1,10 +1,20 @@
 {% extends 'wisewools/base.html' %}
 {% block content %}
-<div class="content-section"></div>
-<form action="" method="post"></form>
-{% csrf_token %}
-<fieldset class="form-group">
-  <legend class="border-bottom mb-4">Be a wisewool here</legend>
-  {{ form }}
-</fieldset>
+<div class="content-section">
+    <form method="POST">
+    {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Join Today!</legend>
+              {{ form.as_p }}
+        </fieldset>
+      <div class="form-group">
+        <button class="btn btn-outline-info" type="submit">Sign Up</button>
+      </div>
+    </form>
+</div>
+<div class="border-top pt-1">
+  <small class="text-muted">
+    Already have an account? <a class= ml-2  href="{% url 'login' %}">Login</a>
+  </small>
+</div>
 {% endblock content %}
