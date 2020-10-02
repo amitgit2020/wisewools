@@ -1,7 +1,46 @@
-{% extends 'wisewools/base.html' %}
 {% load crispy_forms_tags %}
-{% block content %}
-<div class="content-section">
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<style>
+    .login_div {
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    /* Center form on page horizontally & vertically */
+    top: 50%;
+    left: 50%;
+    margin-top: -200px;
+    margin-left: -150px;
+}
+
+.login_form {
+    width: 300px;
+    height: 300px;
+
+    background: gray;
+    border-radius: 10px;
+
+    margin: 0;
+    padding: 0;
+}
+
+</style>
+    <title>Login</title>
+  </head>
+  <body>
+<main role="main" class="container">
+    <div class="login_div">
+
     <form method="POST">
     {% csrf_token %}
         <fieldset class="form-group">
@@ -12,10 +51,14 @@
         <button class="btn btn-outline-info" type="submit">Login</button>
       </div>
     </form>
-</div>
-<div class="border-top pt-1">
+    <div class="border-top pt-1">
   <small class="text-muted">
-    Don't have an account? <a class= ml-2  href="{% url 'signup' %}">Sign Up</a>
+    Don't have an account? <a href="{% url 'signup' %}">Sign Up</a>
   </small>
 </div>
-{% endblock content %}
+</div>
+
+</main>
+
+  </body>
+</html>
